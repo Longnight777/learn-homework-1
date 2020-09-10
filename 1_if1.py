@@ -14,12 +14,39 @@
 
 """
 
-def main():
-    """
-    Эта функция вызывается автоматически при запуске скрипта в консоли
-    В ней надо заменить pass на ваш код
-    """
-    pass
+def employment_by_age(age_def): #функция
+    
+    if age_def < 3: 
+        return '\nСлишком мал'
+    if age_def >= 3 and age_def < 7:
+        return '\nУчится в детском саду'
+    if age_def >= 7 and age_def < 18:
+        return '\nУчится в школе'
+    if age_def >= 18 and age_def < 23:
+        return '\nУчится в ВУЗе'
+    if age_def >= 23 and age_def < 65:
+        return '\nРаботает'
+    if age_def >= 65:
+        return '\nНа пенсии'
 
+def main():
+
+    condition = True # начальное значение условия цикла
+
+    while condition == True: # цикл для перезапуска ввода пользователя при некорректном вводе.
+        try:
+            age = float(input("\nВведите возраст: "))
+        except ValueError: # исключение на случай ввода строки. 
+            print("\nНекорректный ввод. Введенные данные не являются числом. Попробуй снова.")
+            continue # Начать цикл с начала
+        else:     
+            if age < 0:
+                print("\nНекорректный ввод. Возраст не может быть меньше нуля. Попробуй снова.")
+                continue # Начать цикл с начала
+        condition = False # при корректном вводе условие цикла сбрасывается
+
+    employment = employment_by_age(age) # записываем вывод функции в переменную   
+    print(employment) # Вывод результата
+  
 if __name__ == "__main__":
     main()
