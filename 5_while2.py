@@ -15,11 +15,25 @@
     
 """
 
+def ask_user_dict():
+
+    dictionary = {"Как дела?": "Хорошо!", "Что делаешь?": "Программирую", "Почему небо голубое?": "Потому что"}
+    list_dict_keys = list(dictionary.keys())
+
+    user_ask = input("\nПрограмма: Задай мне вопрос\nПользователь: ")
+
+    for key in list_dict_keys:
+        if user_ask == key:
+            print(f"Программа: {dictionary[key]}")
+
 def ask_user():
-    """
-    Замените pass на ваш код
-    """
-    pass
+    
+    user_say = None
+
+    while user_say != "Хорошо":
+        user_say = input("\nПрограмма: Как дела?\nПользователь: ")
+
+    ask_user_dict()    
     
 if __name__ == "__main__":
     ask_user()
