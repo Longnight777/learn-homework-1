@@ -17,21 +17,22 @@
 
 def string_comparison(string_1_def, string_2_def): #функция
 
-        if (isinstance(string_1_def, str) and isinstance(string_2_def, str)) != True:
-            return 0        
-        if string_1_def == string_2_def:
-            return 1   
-        if len(string_1_def) > len(string_2_def):
-            return 2
-        if string_2_def == "learn":
-            return 3   
+    if not (isinstance(string_1_def, str) and isinstance(string_2_def, str)):
+        return 0        
+    if string_1_def == string_2_def:
+        return 1   
+    if string_1_def != string_2_def and len(string_1_def) > len(string_2_def):
+        return 2
+    if string_1_def != string_2_def and string_2_def == "learn":
+        return 3   
 
 def main():
-     
+   
     print(string_comparison("2", 4))
     print(string_comparison("python", "python"))
     print(string_comparison("learning", "python"))
     print(string_comparison("Hi", "learn"))
-    
+
 if __name__ == "__main__":
     main()
+    
