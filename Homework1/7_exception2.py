@@ -19,8 +19,9 @@ def get_summ(num_one, num_two):
     try:
         result = int(num_one) + int(num_two)
     except ValueError:
-        print("Введенные данные не являются целыми числами")
-    return result
+        print("Введенные данные не являются целыми числами") 
+    
+    return result       
     
 if __name__ == "__main__":
     print(get_summ(2, 2))
